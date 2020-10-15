@@ -1,0 +1,9 @@
+{
+  "playerInfo": {
+    "name": "Tony",
+    "level": 1,
+    "health": 20,
+    "inventory": [],
+    "location": "spawn"
+  }
+}
