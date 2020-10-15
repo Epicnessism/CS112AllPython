@@ -1,0 +1,23 @@
+def upgradeForEachPositiveStat(weapon, material, materialAmount, materialID):
+
+    for positiveStat in material["augments"]["positive"]:
+        materialAmountLocal = materialAmount
+        while materialAmountLocal > 0:
+            print(positiveStat)
+            matsConsumed = weapon.consumedMaterials[materialID]["amount"]  # amount of invested mats
+            matsPerPoint = positiveStat["amountPerPoint"]
+
+            pointsApplied = matsConsumed / matsPerPoint
+            amountMatsNextPoint = (pointsApplied + 1) * matsPerPoint
+            matsUntilNextPoint = amountMatsNextPoint - matsConsumed
+
+            print("matsUntilNextPoint" + str(matsUntilNextPoint))
+            print("materialAmountLocal" + str(materialAmountLocal))
+            if matsUntilNextPoint <= materialAmountLocal:
+                materialAmountLocal -= matsUntilNextPoint
+                weapon.consumedMaterials[materialID]["amount"] += matsUntilNextPoint
+                weapon.stats[positiveStat["stat"]] += 1
+
+            else:
+                weapon.consumedMaterials[materialID]["amount"] += materialAmountLocal
+                materialAmountLocal = 0

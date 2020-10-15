@@ -1,6 +1,7 @@
 class WeaponBase:
-    def __init__(self, weaponLevel, statsValuesArray, attributesArray):
+    def __init__(self, weaponLevel, statsValuesArray, attributesArray, consumedMaterials):
         print(statsValuesArray)
+        # self.__weaponLevel = weaponLevel
         self.weaponLevel = weaponLevel
         self.stats = {
             "attack": statsValuesArray[0],
@@ -17,7 +18,8 @@ class WeaponBase:
             "range": statsValuesArray[11],
         }
         self.attributes = attributesArray
+        self.consumedMaterials = consumedMaterials
 
     def getWeaponLevel(self):
-        print("Weapon Level: " + self.weaponLevel)
+        print("Weapon Level: " + str(self.weaponLevel))
 

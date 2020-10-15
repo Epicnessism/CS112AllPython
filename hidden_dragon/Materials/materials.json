@@ -1,23 +1,25 @@
 {
-  "Bear Fur": {
+  "bearFur_1": {
+    "name": "Bear Fur",
     "description": "Fur of a bear",
     "augments": {
       "positive": [
         {
-          "attribute": "defense",
+          "stat": "defense",
           "amountPerPoint": 3
         },
         {
-          "attribute": "strength",
+          "stat": "attack",
           "amountPerPoint": 10
         }
       ],
       "negative": [
         {
-          "attribute": "agility",
+          "stat": "agility",
           "amountPerPoint": 5
         }
       ]
     }
   }
 }
+
