@@ -22,7 +22,14 @@ print(myFirstWeapon.stats)
 # print(myFirstWeapon.weaponLevel)
 
 Upgrade.upgradeWithMaterials(myFirstWeapon, "bearFur_1", 10)
+print(myFirstWeapon.consumedMaterials)
+print(myFirstWeapon.stats)
 
+Upgrade.upgradeWithMaterials(myFirstWeapon, "bearFur_1", 1)
+print(myFirstWeapon.consumedMaterials)
+print(myFirstWeapon.stats)
+
+Upgrade.upgradeWithMaterials(myFirstWeapon, "bearFur_1", 9)
 print(myFirstWeapon.consumedMaterials)
 print(myFirstWeapon.stats)
 

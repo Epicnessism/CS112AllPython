@@ -3,7 +3,42 @@
     "name": "Tony",
     "level": 1,
     "health": 20,
-    "inventory": [],
+    "inventory": [
+      {
+        "type": "weapon",
+        "info": [
+          {
+            "weaponLevel": 1,
+            "stats": {
+              "attack": 1,
+              "health": 2,
+              "defense": 3,
+              "agility": 4,
+              "criticalChance": 1,
+              "criticalDamage": 0,
+              "effectResist": 1,
+              "effectiveness": 1,
+              "weight": 0,
+              "durability": 1,
+              "Hardness": 0,
+              "range": 0
+            },
+            "attributes": [
+              {
+                "attributeID": "freezeAttribute"
+              }
+            ],
+            "consumedMaterials": [
+              {
+                "bearFur_2": {
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "location": "spawn"
   }
 }
