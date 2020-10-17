@@ -28,7 +28,7 @@ def upgradeForEachPositiveStat(weapon, material, materialAmount, materialID):
     for positiveStat in material["augments"]["positive"]:
         materialAmountLocal = materialAmount
         while materialAmountLocal > 0:
-            print(positiveStat)
+            # print(positiveStat)
             matsConsumed = weapon.consumedMaterials[materialID]["amount"]  # amount of invested mats
             matsPerPoint = positiveStat["amountPerPoint"]
 
@@ -36,11 +36,31 @@ def upgradeForEachPositiveStat(weapon, material, materialAmount, materialID):
             amountMatsNextPoint = (pointsApplied + 1) * matsPerPoint
             matsUntilNextPoint = amountMatsNextPoint - matsConsumed
 
-            print("matsUntilNextPoint" + str(matsUntilNextPoint))
-            print("materialAmountLocal" + str(materialAmountLocal))
+            # print("matsUntilNextPoint" + str(matsUntilNextPoint))
+            # print("materialAmountLocal" + str(materialAmountLocal))
             if matsUntilNextPoint <= materialAmountLocal:
                 materialAmountLocal -= matsUntilNextPoint
                 weapon.stats[positiveStat["stat"]] += 1
+            else:
+                materialAmountLocal = 0
+
+    for negativeStat in material["augments"]["negative"]:
+        materialAmountLocal = materialAmount
+        while materialAmountLocal > 0:
+            # print(negativeStat)
+            matsConsumed = weapon.consumedMaterials[materialID]["amount"]  # amount of invested mats
+            matsPerPoint = negativeStat["amountPerPoint"]
+
+            pointsApplied = math.floor(matsConsumed / matsPerPoint)
+            amountMatsNextPoint = (pointsApplied + 1) * matsPerPoint
+            matsUntilNextPoint = amountMatsNextPoint - matsConsumed
+
+            # print("matsUntilNextPoint" + str(matsUntilNextPoint))
+            # print("materialAmountLocal" + str(materialAmountLocal))
+            if matsUntilNextPoint <= materialAmountLocal:
+                materialAmountLocal -= matsUntilNextPoint
+                if weapon.stats[negativeStat["stat"]] > 0:
+                    weapon.stats[negativeStat["stat"]] -= 1
             else:
                 materialAmountLocal = 0
 

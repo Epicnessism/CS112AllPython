@@ -20,6 +20,28 @@
         }
       ]
     }
+  },
+  "wolfFang_1": {
+    "name": "Wolf Fang",
+    "description": "Fang of a wolf",
+    "augments": {
+      "positive": [
+        {
+          "stat": "attack",
+          "amountPerPoint": 3
+        },
+        {
+          "stat": "criticalDamage",
+          "amountPerPoint": 11
+        }
+      ],
+      "negative": [
+        {
+          "stat": "durability",
+          "amountPerPoint": 6
+        }
+      ]
+    }
   }
 }
 

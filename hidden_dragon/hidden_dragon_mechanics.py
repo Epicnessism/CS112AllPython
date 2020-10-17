@@ -33,3 +33,6 @@ Upgrade.upgradeWithMaterials(myFirstWeapon, "bearFur_1", 9)
 print(myFirstWeapon.consumedMaterials)
 print(myFirstWeapon.stats)
 
+Upgrade.upgradeWithMaterials(myFirstWeapon, "wolfFang_1", 9)
+print(myFirstWeapon.consumedMaterials)
+print(myFirstWeapon.stats)
